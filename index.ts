@@ -4,7 +4,7 @@
 // Both insertion and deletion require O(log n) time. Searching requires O(k*logn) time, where `k`
 // is the number of intervals in the output list.
 
-import isSame = require('shallowequal')
+import isSame from 'shallowequal'
 
 export interface Interval<N extends number | bigint = number> {
   readonly low: N
@@ -609,7 +609,7 @@ export interface DataInterval<T, N extends number | bigint = number> extends Int
  * The default export just wraps the `IntervalTree`, while providing a simpler API. Check out the
  * README for description on how to use each.
  */
-export default class DataIntervalTree<T, N extends number | bigint = number> {
+class DataIntervalTree<T, N extends number | bigint = number> {
   private tree = new IntervalTree<DataInterval<T, N>, N>()
 
   public insert(low: N, high: N, data: T) {
@@ -640,6 +640,8 @@ export default class DataIntervalTree<T, N extends number | bigint = number> {
     return this.tree.count
   }
 }
+
+export default DataIntervalTree
 
 export class InOrder<T extends Interval<N>, N extends number | bigint = number>
   implements IterableIterator<T>

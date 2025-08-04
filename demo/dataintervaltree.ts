@@ -1,4 +1,4 @@
-import cuid = require('cuid')
+import cuid from 'cuid'
 import IntervalTree from '../index'
 
 const intervalTree = new IntervalTree<string>()

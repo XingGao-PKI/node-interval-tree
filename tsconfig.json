@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "target": "esnext",
     "downlevelIteration": true,
     "lib": [
@@ -8,14 +8,17 @@
       "es2020",
       "scripthost",
       "es2015.collection",
-      "es2015.iterable"
+      "es2015.iterable",
+      "esnext",
     ],
     "noImplicitAny": true,
     "strictNullChecks": true,
     "sourceMap": true,
     "declaration": true,
     "moduleResolution": "node",
-    "outDir": "lib"
+    "outDir": "lib",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
   },
   "include": ["./"],
   "exclude": [

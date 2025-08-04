@@ -1,4 +1,4 @@
-import cuid = require('cuid')
+import cuid from 'cuid'
 import { Interval, IntervalTree } from '../index'
 
 interface StringInterval extends Interval {
